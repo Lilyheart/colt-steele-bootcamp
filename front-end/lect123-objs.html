@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Movie DB</h1>
+    <script type="text/javascript">
+      var movie = [
+        {
+          name: "In Bruges",
+          rating: 5,
+          hasWatched: true
+        }, {
+          name: "Frozen",
+          rating: 4.5,
+          hasWatched: false
+        }, {
+          name: "Mad Max Fury Road",
+          rating: 5,
+          hasWatched: true
+        }, {
+          name: "Les Miserables",
+          rating: 3.5,
+          hasWatched: false
+        }
+      ]
+
+      for (var i = 0; i < movie.length; i++) {
+        if (movie[i].hasWatched) {
+          watchText = "watched"
+        } else {
+          watchText = "not seen"
+        }
+        console.log("You have " + watchText + " \"" + movie[i].name + "\" - " + movie[i].rating + " stars");
+      }
+    </script>
+  </body>
+</html>
