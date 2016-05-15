@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Array Problem Set</title>
+  </head>
+  <body>
+    <h1>Array Problem Set</h1>
+    <ul>
+      <li>printReverse()</li>
+      <li>isUniform()</li>
+      <li>sumArray()</li>
+      <li>max()</li>
+    </ul>
+    <!-- script embed is bad, just trying to save space -->
+    <script type="text/javascript">
+
+      //printReverse([1,2,3,4]); printReverse(["a","b","c"]);
+      function printReverse(array) {
+        for (var i = array.length - 1; i >= 0; i--) {
+          console.log("//" + array[i]);
+        }
+      }
+
+      //isUniform([1,1,1,1]); isUniform([2,1,1,1]); isUniform(["a","b","p"]); isUniform(["b","b","b"]);
+      function isUniform(array) {
+        for (var i = 1; i < array.length - 1; i++) {
+          if (array[0] !== array[i]) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      //sumArray([1,2,3]); sumArray([10,3,10,4]); sumArray([-5,100]);
+      function sumArray(array) {
+        var total = 0;
+        for (var i = 0; i < array.length; i++) {
+          total += array[i];
+        }
+        return total;
+      }
+
+      //max([1,2,3]); max([10,3,10,4]); max([-5,100]);
+      function max(array) {
+        var max = array[0]
+        for (var i = 1; i < array.length; i++) {
+          if (max < array[i]) {
+            max = array[i];
+          };
+        }
+        return max;
+      }
+    </script>
+  </body>
+</html>
