@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Exercise</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>Div 1</div>
+		<div class="highlight">Div 2</div>
+		<div id="third">Div 3</div>
+		<div class="highlight">Div 4</div>
+
+		<!-- Embed scripts are bad mkay? -->
+		<script type="text/javascript">
+			// Select all divs and give them a purple background
+			$("div").css("background", "purple");
+
+			// Select the divs with class "highlight" and make them 200px wide
+			$("div.highlight").css("width", "200px");
+
+			// Select the div with id "third" and give it a orange border
+			$("div#third").css("border", "1px solid orange");
+
+			// Bonus: Select the first div only and change its font color to pin
+			$("div:first-of-type").css("color", "pink");
+		</script>
+	</body>
+</html>

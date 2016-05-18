@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Exercise</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style media="screen">
+      .correct {color: green;}
+      .wrong {color: red;background: pink;}
+      .doneX {color: gray;text-decoration: line-through;}
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Methods Demo Page</h1>
+
+    <input type="text" placeholder="your name" name="name" value="">
+    <select class="" name="">
+      <option>Ostrich</option>
+      <option>Turtle</option>
+      <option>Toad</option>
+    </select>
+
+    <ul>
+      <li>val()</li>
+      <li>text()</li>
+      <li>attr()</li>
+      <li>html()</li>
+      <li>addClass()</li>
+      <li>removeClass()</li>
+      <li>toggleClass()</li>
+    </ul>
+
+    <button type="button" name="button">Done</button>
+    <hr>
+    <img src="rusty.jpg" alt="file:rusty.jpg" />
+    <img src="rusty.jpg" alt="file:rusty.jpg" />
+    <img src="rusty.jpg" alt="file:rusty.jpg" />
+
+    <script type="text/javascript">
+      //val()
+      console.log("Original Input value: \"" + $("input").val() + "\"");
+      $("input").val("Rusty Steele");
+      $("select").val("Toad");
+      //attr()
+      $("img:first").attr("alt", "Colt Steel's cute dog Rusty... aka Tater");
+      console.log("img's alt text first: " + $("img:first").attr("alt"));
+      console.log("img's alt text last: " + $("img").last().attr("alt"));
+      //html()
+      console.log("Original ul: " + $("ul").html());
+      $("ul").html("<li>val()</li><li>attr()</li><li>html()</li><li class=\"wrong\">text()</li><li>addClass()</li><li>removeClass()</li><li>toggleClass()</li>");
+      //text()
+      console.log("Original H1: " + $("h1").text());
+      $("h1").text("New text set by js");
+      //manipulate classes
+      $("h1").addClass("correct");
+      $("li").removeClass("wrong");
+      $("li").last().toggleClass("doneX");
+      $("button").click(function(){
+        $("li").last().toggleClass("doneX");
+      });
+    </script>
+  </body>
+</html>
