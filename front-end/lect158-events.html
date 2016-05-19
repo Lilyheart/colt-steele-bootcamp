@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <style media="screen">
+      .div {
+        width: 100px;
+        height: 100px;
+        background: steelblue;
+        margin: 20px;
+        float: left;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="">
+      <h1>jQuery Events</h1>
+
+      <input type="text" name="name" value="">
+
+      <button type="button" name="button">Don't Click Me</button>
+      <button type="button" name="button">Seriously Don't Click Me</button>
+      <button type="button" name="button">This is your last warning!</button>
+    </div>
+
+    <div class="">
+      <hr>
+      <button class="fadeButton" type="button" name="button">Fade 'em</button>
+      <button class="slideButton" type="button" name="button">Slide 'em</button>
+      <hr>
+      <div class="div">Div 1</div>
+      <div class="div">Div 2</div>
+      <div class="div">Div 3</div>
+
+    </div>
+
+  </body>
+
+  <script type="text/javascript">
+    //Click
+    $("h1").click(function () {
+      $(this).css("color", "purple");
+    });
+
+    $("button").click(function () {
+      console.log("Button \"" + $(this).text() + "\" clicked.")
+    });
+
+    //keypress
+    $("input").keypress(function (e) {
+      console.log("Key \"" + e.which + "\" pressed.")
+    });
+
+    $("input").keypress(function (e) {
+      if (event.which === 13) {
+        console.log("You pressed Enter.")
+      }
+    });
+
+    //on
+    $("button").on("mouseenter", function () {
+      $(this).css("font-weight", "bold");
+    });
+
+    $("button").on("mouseleave", function () {
+      $(this).css("font-weight", "normal");
+    });
+
+    //effects  - fadeOut, fadeIn, fadeToggle
+    $(".fadeButton").click(function () {
+      $(".div").fadeToggle(2000, function () { //Second function callback happens after the fade is complete
+        console.log("Fade Completed!");
+        // $(this).remove();
+      });
+    });
+
+    $(".slideButton").click(function () {
+      $(".div").slideToggle(2000);
+    });
+
+  </script>
+</html>
