@@ -11,7 +11,9 @@ canvas {
 }
 
 h1 {
-  color: beige;
+  color: white;
   text-align: center;
   font-size: 20px;
+  background: #82728A;
+  padding: 20px 0;
 }
