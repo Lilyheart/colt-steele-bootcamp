@@ -55,7 +55,7 @@
         for (var i = 0; i < circles.length; i++) {
           if(Number(circles[i].area) < 100) {
             circles[i].remove();
-            circles[i].pop;
+            circles.splice(i, 1);
           } else {
             circles[i].fillColor.hue += 1.4;
             circles[i].scale(0.9);
